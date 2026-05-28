@@ -1,0 +1,5 @@
+(a) ECADB no
+(b) ABDCE yes
+(c) ADEBC yes
+(d) BCDEA no
+(e) BADCE yes

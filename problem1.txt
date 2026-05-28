@@ -1,0 +1,20 @@
+a) If you open an existing file for writing, the open() system call does not
+automatically erase the contents. To discard the previous contents and begin
+writing from the start of an empty file, you must open the file with the O_TRUNC
+flag. This flag tells the operating system to truncate the file to length zero
+immediately after it is opened.
+
+b) The sigaction() system call lets a process define how it will handle a given
+signal. To specify that a signal should be ignored, you set the handler field of
+the sigaction to SIG_IGN and then call sigaction() for the particular signal.
+This tells the kernel to discard that signal whenever it is delivered.
+
+c) The pipe2() system call creates a pipe with extra control flags. If the O_DIRECT
+flag is given, it changes the behavior of the pipe to do direct I/O, which means
+that data transfers avoid buffering in the kernel’s cache. As a result, reads and
+writes on the pipe are performed directly between user space and the pipe without
+the caching, which can reduce overhead.
+
+d) If a signal is delivered during a call, mq_receive() returns -1 and sets the
+global variable errno to EINTR. This allows the program to tell that the call was
+interrupted by a signal rather than returning because a message actually arrived.

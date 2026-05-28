@@ -1,0 +1,19 @@
+Server/Client
+
+1. Update queue names in common.h.
+2. Make a struct to represent the state. You can assume a maximum size when creating the struct.
+3. Make global state variable.
+4. Write show() function, but have it simply print instead of building a string for now.
+5. Add code to read in state from the input files. You can use the function signature included in the starter code: void read_input_file(const char* filename)
+6. Modify main to immediately read input, call show(), then exit. Confirm that everything looks good, then restore main back to normal.
+7. In the server file, work on the code to execute the actions that will be coming in from the client.
+8. Modify main to immediately read input, call show(), call one of the action functions, and call show() again. Confirm that everything looks good, then restore main back to normal.
+9. Write the code for the server to receive a message and call the function corresponding to the client's message. Assume no errors for now.
+10. Create client.c, and copy+paste the includes from server.c.
+11. In the client, open and close the message queues.
+12. In the client, setup the mq_send call.
+13. Run both the server and client to ensure no errors.
+14. Write the send/receive for the server to send back a message to the client about the command's result.
+15. Test the programs interacting.
+16. Modify the show command to build a string instead of printing. Then modify the server code so that it sends back the result of show.
+16. Write any more requirements from the homework and polish it up.
